@@ -45,6 +45,20 @@ window.DEMO_COMPANY = {
   equipmentNames: { heat_pump: "heat pump", boiler: "boiler", ac: "air conditioning", ventilation: "ventilation" },
   skillNames: { heat_pump: "heat pumps", boiler: "boilers", ac: "air conditioning", ventilation: "ventilation" },
 
+  // Czech names, used on the Czech pages (<html lang="cs">)
+  cs: {
+    name: "Novák Servis",
+    jobs: {
+      heat_pump:   { repair: "oprava tepelného čerpadla", service: "roční servis tepelného čerpadla" },
+      boiler:      { repair: "oprava kotle", service: "servis kotle" },
+      ac:          { repair: "oprava klimatizace", service: "čištění klimatizace" },
+      ventilation: { repair: "oprava vzduchotechniky", service: "výměna filtrů vzduchotechniky" }
+    },
+    equipmentNames: { heat_pump: "tepelné čerpadlo", boiler: "kotel", ac: "klimatizace", ventilation: "vzduchotechnika" },
+    skillNames: { heat_pump: "tepelná čerpadla", boiler: "kotle", ac: "klimatizace", ventilation: "vzduchotechnika" },
+    areaNames: { "Prague": "Praha", "Central Bohemia": "Středočeský kraj" }
+  },
+
   // A tiny "map" instead of real geocoding: Prague streets and their district
   pragueStreets: {
     "dejvicka": 6, "evropska": 6, "jugoslavskych partyzanu": 6, "bubenecska": 6,
