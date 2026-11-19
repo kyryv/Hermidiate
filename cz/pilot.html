@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pilot – Hermidiate</title>
+  <meta name="description" content="Zapojte se do pilotu Hermidiate pro servisní firmy v Praze a Středočeském kraji. Domluvte si hovor a nastavte asistenta pro svou firmu.">
+  <meta name="theme-color" content="#EEF2F3">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Přeskočit na obsah</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Hermidiate – úvod">
+      <img src="../assets/favicon.svg" width="34" height="34" alt="">
+      <span class="logo-word">Hermidiate</span>
+    </a>
+    <nav class="nav" aria-label="Hlavní menu">
+      <a class="nav-link" href="how-it-works.html">Jak to funguje</a>
+      <a class="nav-link" href="live-demo.html">Živé demo</a>
+      <a class="nav-link" href="use-cases.html">Využití</a>
+      <a class="nav-link" href="security.html">Bezpečnost</a>
+      <a class="nav-link" href="pilot.html" aria-current="page">Pilot</a>
+      <span class="lang"><a href="../pilot.html" hreflang="en" lang="en">EN</a><span aria-current="true">CZ</span></span>
+      <a class="btn btn-primary btn-sm" href="pilot.html">Domluvit pilot</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="wrap pilot-top" id="contact">
+    <div class="pilot-info">
+      <p class="eyebrow eyebrow-accent">Pilot</p>
+      <h1>Hledáme první servisní firmu v okolí Prahy</h1>
+      <p class="lead">Hermidiate nastavíme pro vaši firmu a vyladíme ho s vaším dispečinkem.</p>
+      <ol class="pilot-steps">
+        <li><span><b>Krátký hovor.</b> Projdeme vaše služby, techniky a oblast, kterou pokrýváte.</span></li>
+        <li><span><b>Nastavení.</b> Kvalifikace techniků, délky zakázek, pracovní doba a pravidla rezervací.</span></li>
+        <li><span><b>Spuštění.</b> Chat se objeví na vašem webu; v prvních týdnech ho ladíme s vaším dispečinkem.</span></li>
+      </ol>
+      <div class="pilot-price">
+        <p class="eyebrow">Jak se tvoří cena</p>
+        <p class="body">Cena závisí na počtu poptávek, počtu techniků a kalendářů a na tom, jaké integrace potřebujete. Přesná čísla řekneme při prvním hovoru.</p>
+      </div>
+      <p class="small">Nebo nám napište přímo: <a class="email" href="mailto:hermidiateai@gmail.com">hermidiateai@gmail.com</a></p>
+    </div>
+    <div class="pilot-form">
+      <h2>Domluvit hovor o pilotu</h2>
+      <form class="form form-compact" id="pilot-form" name="pilot" method="POST" novalidate
+            data-netlify="true" netlify-honeypot="website"
+            data-msg-ok="Děkujeme! Ozveme se do dvou pracovních dnů."
+            data-msg-mailto="Otevřeli jsme e-mail s vašimi údaji. Stačí ho odeslat."
+            data-mail-subject="Hermidiate pilot – zájem"
+            data-lbl-company="Firma" data-lbl-name="Jméno" data-lbl-phone="Telefon" data-lbl-techs="Technici"
+            data-msg-err="Odeslání se nepovedlo. Napište nám prosím na hermidiateai@gmail.com."
+            data-msg-invalid="Vyplňte prosím název firmy, své jméno a platný e-mail.">
+        <div class="field"><label for="firm">Název firmy</label><input id="firm" name="company" type="text" autocomplete="organization" required></div>
+        <div class="field-row">
+          <div class="field"><label for="name">Jméno</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="phone">Telefon</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="techs">Počet techniků</label>
+          <select id="techs" name="technicians"><option>10-25</option><option>26-49</option><option>50-100</option><option>více než 100</option></select>
+        </div>
+        <input type="hidden" name="form-name" value="pilot">
+        <input type="hidden" name="language" value="cs">
+        <input type="hidden" name="page" value="">
+        <input type="hidden" name="sent_at" value="">
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-primary" type="submit">Odeslat poptávku pilotu</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+        <p class="form-note">Údaje použijeme jen k tomu, abychom se vám ozvali. Více v <a href="ochrana-osobnich-udaju.html">zásadách ochrany osobních údajů</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap stack" style="max-width:820px">
+      <p class="eyebrow">Otázky</p>
+      <h2>Než se rozhodnete</h2>
+      <div class="faq">
+        <details><summary>Funguje to s naším kalendářem?</summary><p>Ano. Každý technik dostane zakázku do svého kalendáře. Používáte jiný kalendář nebo dispečerský systém? Napište nám a najdeme řešení.</p></details>
+        <details><summary>Jakými jazyky mluví?</summary><p>Česky, anglicky a ukrajinsky. Zákazníci mohou jazyky v jedné konverzaci míchat.</p></details>
+        <details><summary>Co se stane, když si AI není jistá?</summary><p>Nejasné případy, instalace a pozdní změny jdou na člověka, s důvodem, kontaktem a poslední zprávou. Únik plynu a kouř se nikdy neplánují.</p></details>
+        <details><summary>Jak dlouho pilot trvá?</summary><p>Délku domluvíme při prvním hovoru podle vašich služeb a počtu techniků.</p></details>
+        <details><summary>Kde jsou uložená naše data?</summary><p>Podrobnosti najdete na stránce <a href="security.html">Bezpečnost</a> a v <a href="ochrana-osobnich-udaju.html">zásadách ochrany osobních údajů</a>.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Hermidiate AI · Praha</span>
+    <span class="footer-links">
+      <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>
+      <a href="security.html">Bezpečnost</a>
+      <a href="mailto:hermidiateai@gmail.com">hermidiateai@gmail.com</a>
+    </span>
+  </div>
+</footer>
+<script src="../assets/main.js"></script>
+<script src="../assets/effects.js"></script>
+</body>
+</html>

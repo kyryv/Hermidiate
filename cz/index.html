@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hermidiate – AI dispečer pro servisní firmy</title>
+  <meta name="description" content="Hermidiate přijme požadavek na servis v chatu, ověří adresu, vybere technika a zarezervuje termín v kalendáři. Pro servisní firmy v Praze a Středočeském kraji.">
+  <meta name="theme-color" content="#EEF2F3">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Přeskočit na obsah</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Hermidiate – úvod">
+      <img src="../assets/favicon.svg" width="34" height="34" alt="">
+      <span class="logo-word">Hermidiate</span>
+    </a>
+    <nav class="nav" aria-label="Hlavní menu">
+      <a class="nav-link" href="how-it-works.html">Jak to funguje</a>
+      <a class="nav-link" href="live-demo.html">Živé demo</a>
+      <a class="nav-link" href="use-cases.html">Využití</a>
+      <a class="nav-link" href="security.html">Bezpečnost</a>
+      <a class="nav-link" href="pilot.html">Pilot</a>
+      <span class="lang"><a href="../index.html" hreflang="en" lang="en">EN</a><span aria-current="true">CZ</span></span>
+      <a class="btn btn-primary btn-sm" href="pilot.html">Domluvit pilot</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <!-- Services ticker (right under the header, pauses on hover): list is duplicated so the loop is seamless; the copy is hidden from screen readers -->
+  <section class="ticker" aria-label="Návštěvy, které Hermidiate objedná">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="i-heat" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="10" cy="12" r="3.5"/><path d="M16 9h2M16 12h2M16 15h2"/></symbol>
+      <symbol id="i-cold" viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9.5 4.5 12 7l2.5-2.5M9.5 19.5 12 17l2.5 2.5"/></symbol>
+      <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21c-3.9 0-6.5-2.6-6.5-6.1 0-3.4 2.6-5.3 3.6-8.4 1.6 1.4 2.3 3 2.4 4.6 1-1 1.6-2.4 1.6-4.1 2.6 1.9 3.4 4.7 3.4 7.9 0 3.5-2.6 6.1-4.5 6.1Z"/></symbol>
+      <symbol id="i-air" viewBox="0 0 24 24"><path d="M3 8h11a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h7"/></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4 2.5 20h19L12 4ZM12 10v4.5M12 17.5v.01"/></symbol>
+      <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.5c3.2 4 5.5 7.1 5.5 10.2a5.5 5.5 0 0 1-11 0C6.5 10.6 8.8 7.5 12 3.5Z"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6L13 3Z"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 11 12 4l8.5 7M6 9.5V20h12V9.5M15 6.5V3.5h2.5v5"/></symbol>
+      <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.5 6.5a4 4 0 0 0 5.2 5.2L12 19.4a2 2 0 0 1-2.8 0l-.6-.6a2 2 0 0 1 0-2.8l7.7-7.7a4 4 0 0 1-1.8-1.8Z"/><path d="M14.5 6.5 17 4l3 3-2.5 2.5"/></symbol>
+      <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12 20 3M16.5 6.5l2.5 2.5M14 9l2 2"/></symbol>
+    </svg>
+    <div class="ticker-row">
+      <div class="ticker-window">
+        <div class="ticker-track">
+          <ul class="ticker-list">
+            <li><svg aria-hidden="true"><use href="#i-heat"/></svg>Oprava tepelného čerpadla</li>
+            <li><svg aria-hidden="true"><use href="#i-drop"/></svg>Instalatérské a plynařské opravy</li>
+            <li><svg aria-hidden="true"><use href="#i-cold"/></svg>Servis klimatizace</li>
+            <li><svg aria-hidden="true"><use href="#i-bolt"/></svg>Elektrorevize</li>
+            <li><svg aria-hidden="true"><use href="#i-flame"/></svg>Údržba kotle</li>
+            <li><svg aria-hidden="true"><use href="#i-sun"/></svg>Servis fotovoltaiky a wallboxů</li>
+            <li><svg aria-hidden="true"><use href="#i-alert"/></svg>Havárie topení</li>
+            <li><svg aria-hidden="true"><use href="#i-home"/></svg>Kontroly komínů</li>
+            <li><svg aria-hidden="true"><use href="#i-air"/></svg>Výměna filtrů vzduchotechniky</li>
+            <li><svg aria-hidden="true"><use href="#i-wrench"/></svg>Opravy spotřebičů</li>
+            <li><svg aria-hidden="true"><use href="#i-cold"/></svg>Čištění klimatizace před létem</li>
+            <li><svg aria-hidden="true"><use href="#i-key"/></svg>Garážová vrata a zámky</li>
+            <li><svg aria-hidden="true"><use href="#i-heat"/></svg>Chybové kódy jako E21</li>
+            <li><svg aria-hidden="true"><use href="#i-drop"/></svg>Čištění odpadů</li>
+          </ul>
+          <ul class="ticker-list" aria-hidden="true">
+            <li><svg><use href="#i-heat"/></svg>Oprava tepelného čerpadla</li>
+            <li><svg><use href="#i-drop"/></svg>Instalatérské a plynařské opravy</li>
+            <li><svg><use href="#i-cold"/></svg>Servis klimatizace</li>
+            <li><svg><use href="#i-bolt"/></svg>Elektrorevize</li>
+            <li><svg><use href="#i-flame"/></svg>Údržba kotle</li>
+            <li><svg><use href="#i-sun"/></svg>Servis fotovoltaiky a wallboxů</li>
+            <li><svg><use href="#i-alert"/></svg>Havárie topení</li>
+            <li><svg><use href="#i-home"/></svg>Kontroly komínů</li>
+            <li><svg><use href="#i-air"/></svg>Výměna filtrů vzduchotechniky</li>
+            <li><svg><use href="#i-wrench"/></svg>Opravy spotřebičů</li>
+            <li><svg><use href="#i-cold"/></svg>Čištění klimatizace před létem</li>
+            <li><svg><use href="#i-key"/></svg>Garážová vrata a zámky</li>
+            <li><svg><use href="#i-heat"/></svg>Chybové kódy jako E21</li>
+            <li><svg><use href="#i-drop"/></svg>Čištění odpadů</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="top" class="wrap hero">
+    <div class="hero-text">
+      <h1>Zákazník napíše. Zakázka přistane v kalendáři technika.</h1>
+      <p class="lead">Hermidiate je AI dispečer pro servisní firmy. Přijme požadavek v chatu, ověří kontakt a adresu, vybere technika se správnou kvalifikací a zarezervuje volný termín v kalendáři. Ve dne i v noci, česky, anglicky i ukrajinsky.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="live-demo.html">Vyzkoušejte si to</a>
+        <a class="btn btn-outline" href="pilot.html">Domluvit pilot</a>
+      </div>
+      <p class="small">Zatím pro Prahu a Středočeský kraj. Funguje s kalendáři vašich techniků.</p>
+    </div>
+
+    <div class="hero-demo">
+      <div class="chat" role="img" aria-label="Ukázka konverzace zákazníka s asistentem Hermidiate">
+        <div class="chat-head">
+          <span>Novák Servis · online objednávky</span>
+          <span class="status">24/7</span>
+        </div>
+        <div class="chat-body">
+          <div class="msg msg-bot">Dobrý den, s čím vám můžeme pomoct?</div>
+          <div class="msg msg-user">Tepelné čerpadlo hlásí chybu E21 a netopí.</div>
+          <div class="msg msg-bot">Rozumím. Na jakou adresu má technik přijet?</div>
+          <div class="msg msg-user">Dejvická 77, Praha 4</div>
+          <div class="msg msg-bot">Podle mapy je Dejvická 77 v Praze&nbsp;6. Mám to opravit?</div>
+          <div class="msg msg-user">Ano, Praha 6.</div>
+          <div class="msg msg-bot msg-wide">
+            <span>Volné termíny pro opravu tepelného čerpadla:</span>
+            <span class="slots">
+              <span class="slot slot-picked">Čt 19. 11. · 10:00–12:00</span>
+              <span class="slot">Pá 20. 11. · 08:00–10:00</span>
+              <span class="slot">Po 23. 11. · 13:00–15:00</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="booked">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" stroke="#7CC4DC" stroke-width="2" fill="none"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4" stroke="#7CC4DC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="booked-text">
+          <strong>Rezervováno: čtvrtek 19. 11., 10:00–12:00</strong>
+          <span>Technik Martin D. · oprava tepelného čerpadla · pozvánka do kalendáře odeslána</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="section section-problem">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow eyebrow-accent">Proč na tom záleží</p>
+        <h2>Každá nevyřízená poptávka je zakázka pro konkurenci</h2>
+      </div>
+      <div class="pains">
+        <div class="pain"><span class="pain-tag">Večery a víkendy</span><h3>Poptávky chodí, když nikdo nebere telefon</h3><p>Zákazník s nefunkčním tepelným čerpadlem nebude čekat do pondělí. Zavolá jinam a zakázku dostane ten, kdo se ozve první.</p></div>
+        <div class="pain"><span class="pain-tag">Všední dny</span><h3>Dispečer nepustí telefon z ruky</h3><p>Zjistit závadu, adresu a kontakt, pak najít technika s volnem a správnou kvalifikací. U každé poptávky ručně.</p></div>
+        <div class="pain"><span class="pain-tag">V terénu</span><h3>Chyby stojí technika čas</h3><p>Špatná pražská část, dvojí rezervace, technik bez potřebné kvalifikace nebo bez času na přejezd mezi zakázkami.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="section section-white">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Jak to funguje</p>
+        <h2>Od první zprávy po termín v kalendáři technika</h2>
+      </div>
+      <ol class="steps">
+        <li class="step"><span class="step-num">01</span><h3>Zákazník napíše</h3><p>Popíše závadu vlastními slovy. AI z toho vyčte zařízení, typ práce, naléhavost a preferovaný čas.</p></li>
+        <li class="step"><span class="step-num">02</span><h3>Údaje se ověří</h3><p>Postupně se zeptá na jméno, telefon, e-mail a adresu a adresu ověří na mapě, včetně městské části.</p></li>
+        <li class="step"><span class="step-num">03</span><h3>Vybere se technik</h3><p>Podle kvalifikace na dané zařízení, oblasti, kam technik jezdí, a jeho denního limitu zakázek.</p></li>
+        <li class="step"><span class="step-num">04</span><h3>Najde se volný čas</h3><p>Prohledá kalendář, počítá s přejezdy a nabídne tři termíny. Konkrétní požadovaný čas má přednost.</p></li>
+        <li class="step"><span class="step-num">05</span><h3>Návštěva se zarezervuje</h3><p>Termín ještě jednou ověří, vytvoří událost v kalendáři technika a pošle zákazníkovi pozvánku.</p></li>
+      </ol>
+      <p class="small" style="margin-top:24px"><a href="how-it-works.html">Přečtěte si celý postup</a> · <a href="live-demo.html">nebo vyzkoušejte živé demo</a></p>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="wrap split">
+      <div class="stack">
+        <p class="eyebrow eyebrow-light">Proč se na to dá spolehnout</p>
+        <h2>AI čte text. O termínech rozhodují pevná pravidla.</h2>
+        <p class="body">Jazykový model jen čte a třídí, co zákazník napsal. Ověřování, výběr technika a plánování běží v deterministickém kódu podle pravidel, která nastavíme spolu s vámi. Žádné vymyšlené termíny, žádné slíbené slevy.</p>
+      </div>
+      <div>
+        <div class="rules">
+          <div class="rule"><span class="rule-value">30 min</span><span class="rule-label">rezerva na přejezd mezi zakázkami</span></div>
+          <div class="rule"><span class="rule-value">+2 h</span><span class="rule-label">nejdřívější termín od poptávky, při naléhavosti 1&nbsp;h</span></div>
+          <div class="rule"><span class="rule-value">21 dní</span><span class="rule-label">dopředu se hledají volné termíny</span></div>
+          <div class="rule"><span class="rule-value">10:00–12:00</span><span class="rule-label">každá návštěva jako rozmezí s maximální délkou</span></div>
+        </div>
+        <p class="rules-note">Výchozí nastavení. Každou hodnotu upravíme pro vaši firmu.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Funkce</p>
+        <h2>Zvládne situace, kvůli kterým dnes zvoní telefon</h2>
+      </div>
+      <div class="features">
+        <div class="feature"><h3>Kontrola adresy a městské části</h3><p>Ověří adresu na mapě. Když zákazník uvede špatnou pražskou část, zeptá se. Když napíše jen „Praha“, část doplní.</p></div>
+        <div class="feature"><h3>Žádné dvojí rezervace</h3><p>Stejný telefon nebo e-mail a stejné zařízení s naplánovanou návštěvou? Zákazník uvidí existující rezervaci, místo aby vytvořil novou.</p></div>
+        <div class="feature"><h3>Přesun nebo zrušení bez telefonu</h3><p>Zákazníci si návštěvu sami přesunou nebo zruší až 24 hodin předem, i z nového okna chatu – najdou ji podle telefonního čísla.</p></div>
+        <div class="feature"><h3>Předání dispečerovi</h3><p>Instalace, pozdní změny a nejasné případy jdou na člověka. Upozornění přijde do kalendáře s důvodem, kontaktem a poslední zprávou.</p></div>
+        <div class="feature feature-warn"><h3>Bezpečnost na prvním místě</h3><p>Když zákazník zmíní únik plynu nebo kouř, asistent nic neplánuje. Doporučí volat 112 a okamžitě upozorní dispečera.</p></div>
+        <div class="feature"><h3>Jen vaše oblast, jen vaše služby</h3><p>Obsluhovaná oblast odpovídá tomu, kam vaši technici opravdu jezdí. Mimo ni nebo mimo váš obor asistent zdvořile odmítne.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="wrap split split-center">
+      <div class="stack">
+        <p class="eyebrow">Zapadne do vaší firmy</p>
+        <h2>Stačí vám kalendáře vašich techniků</h2>
+        <p class="body">Každý technik dostane zakázku rovnou do svého kalendáře, s adresou, kontaktem a popisem závady. Pracovní dobu, dovolené a kvalifikace nastavíme společně při spuštění. Technici nic nového neinstalují.</p>
+        <p class="body">Před návštěvou technik zákazníkovi zavolá, upřesní rozsah práce a v případě potřeby zkrátí rezervovaný čas.</p>
+        <p class="small">Používáte jiný kalendář nebo dispečerský systém? <a href="pilot.html#contact">Napište nám</a> a najdeme řešení.</p>
+      </div>
+      <!-- Booking scene: the system scans the technician's day, finds the free 10:00–12:00 slot,
+           books it and fills in the job card. assets/effects.js plays it once when it scrolls into view. -->
+      <div class="bk" data-status-search="Hledám volný čas…" data-status-found="Volný termín · 10:00–12:00" data-status-done="Rezervováno · pozvánka odeslána">
+        <div class="bk-head">
+          <span class="bk-avatar" aria-hidden="true">MD</span>
+          <span class="bk-who"><b>Martin D.</b><span>Tepelná čerpadla · Praha 5–8</span></span>
+          <span class="bk-status" aria-hidden="true"><i></i><span class="bk-status-text">Rezervováno · pozvánka odeslána</span></span>
+        </div>
+        <div class="bk-body">
+          <div class="bk-day" role="img" aria-label="Den technika ve čtvrtek 19. listopadu: nová oprava tepelného čerpadla je zarezervovaná do volného okna od 10:00 do 12:00 mezi dvěma zakázkami, s 30 minutami na přejezd před i po ní">
+            <div class="bk-date" aria-hidden="true"><span>Čt</span><b>19</b><span>lis</span></div>
+            <div class="bk-grid" aria-hidden="true">
+              <span class="bk-hour" style="--h:0">08</span>
+              <span class="bk-hour" style="--h:2">10</span>
+              <span class="bk-hour" style="--h:4">12</span>
+              <span class="bk-hour" style="--h:6">14</span>
+              <span class="bk-hour" style="--h:8">16</span>
+              <span class="bk-ev bk-busy" style="--from:0;--len:1.5"><b>Servis kotle</b>Praha 5</span>
+              <span class="bk-ev bk-travel" style="--from:1.5;--len:0.5">přejezd</span>
+              <span class="bk-gap" style="--from:2;--len:2"><span>volno · 2 h</span></span>
+              <span class="bk-ev bk-new" style="--from:2;--len:2"><b>Oprava čerpadla</b>J. Nováková · Praha 6</span>
+              <span class="bk-ev bk-travel" style="--from:4;--len:0.5">přejezd</span>
+              <span class="bk-ev bk-busy" style="--from:5;--len:1.5"><b>Servis klimatizace</b>Praha 8</span>
+              <span class="bk-ev bk-busy" style="--from:7;--len:1"><b>Výměna filtru</b>Praha 7</span>
+              <span class="bk-scan"></span>
+            </div>
+          </div>
+          <div class="bk-card">
+            <span class="bk-label">Kalendář · nová návštěva</span>
+            <span class="bk-title">Oprava: tepelné čerpadlo – J.&nbsp;Nováková</span>
+            <span class="bk-time"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Čt 19. 11. · 10:00–12:00</span>
+            <dl class="bk-rows">
+              <div class="bk-row"><dt>Adresa</dt><dd>Dejvická 77, Praha 6</dd></div>
+              <div class="bk-row"><dt>Telefon</dt><dd>+420 777 123 456</dd></div>
+              <div class="bk-row"><dt>Závada</dt><dd>Tepelné čerpadlo hlásí chybu E21 a netopí.</dd></div>
+              <div class="bk-row"><dt>Odhad</dt><dd>60 min, rezervováno až 120 min</dd></div>
+            </dl>
+            <p class="bk-call">Před návštěvou zavolejte zákazníkovi a upřesněte rozsah práce.</p>
+          </div>
+        </div>
+        <button class="bk-replay" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4.5h4.5"/></svg>Přehrát znovu</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap stack" style="max-width:720px">
+      <p class="eyebrow eyebrow-accent">Pilot</p>
+      <h2>Hledáme první servisní firmu v okolí Prahy</h2>
+      <p class="body">Hermidiate nastavíme pro vaši firmu, začneme krátkým hovorem. Cena závisí na velikosti firmy a domluvíme ji právě při tomto hovoru.</p>
+      <div class="actions"><a class="btn btn-primary" href="pilot.html">Domluvit pilot</a><a class="btn btn-outline" href="live-demo.html">Nejdřív vyzkoušet demo</a></div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Hermidiate AI · Praha</span>
+    <span class="footer-links">
+      <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>
+      <a href="security.html">Bezpečnost</a>
+      <a href="mailto:hermidiateai@gmail.com">hermidiateai@gmail.com</a>
+    </span>
+  </div>
+</footer>
+<script src="../assets/main.js"></script>
+
+<script src="../assets/effects.js"></script>
+</body>
+</html>

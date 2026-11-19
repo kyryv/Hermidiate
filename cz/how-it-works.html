@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Jak to funguje – Hermidiate</title>
+  <meta name="description" content="Krok za krokem: jak Hermidiate přijme požadavek, ověří údaje, vybere technika a zarezervuje návštěvu.">
+  <meta name="theme-color" content="#EEF2F3">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Přeskočit na obsah</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Hermidiate – úvod">
+      <img src="../assets/favicon.svg" width="34" height="34" alt="">
+      <span class="logo-word">Hermidiate</span>
+    </a>
+    <nav class="nav" aria-label="Hlavní menu">
+      <a class="nav-link" href="how-it-works.html" aria-current="page">Jak to funguje</a>
+      <a class="nav-link" href="live-demo.html">Živé demo</a>
+      <a class="nav-link" href="use-cases.html">Využití</a>
+      <a class="nav-link" href="security.html">Bezpečnost</a>
+      <a class="nav-link" href="pilot.html">Pilot</a>
+      <span class="lang"><a href="../how-it-works.html" hreflang="en" lang="en">EN</a><span aria-current="true">CZ</span></span>
+      <a class="btn btn-primary btn-sm" href="pilot.html">Domluvit pilot</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="wrap page-intro">
+    <p class="eyebrow">Jak to funguje</p>
+    <h1>Od první zprávy po termín v kalendáři technika</h1>
+    <p class="lead">Pět kroků, pokaždé stejně. AI čte slova zákazníka; technika a čas vybírají pevná pravidla.</p>
+  </section>
+
+  <section class="section" style="padding-top:24px">
+    <div class="wrap">
+      <ol class="steps">
+        <li class="step"><span class="step-num">01</span><h3>Zákazník napíše</h3><p>Popíše závadu vlastními slovy. AI z toho vyčte zařízení, typ práce, naléhavost a preferovaný čas.</p></li>
+        <li class="step"><span class="step-num">02</span><h3>Údaje se ověří</h3><p>Postupně se zeptá na jméno, telefon, e-mail a adresu a adresu ověří na mapě, včetně městské části.</p></li>
+        <li class="step"><span class="step-num">03</span><h3>Vybere se technik</h3><p>Podle kvalifikace na dané zařízení, oblasti, kam technik jezdí, a jeho denního limitu zakázek.</p></li>
+        <li class="step"><span class="step-num">04</span><h3>Najde se volný čas</h3><p>Prohledá kalendář, počítá s přejezdy a nabídne tři termíny. Konkrétní požadovaný čas má přednost.</p></li>
+        <li class="step"><span class="step-num">05</span><h3>Návštěva se zarezervuje</h3><p>Termín ještě jednou ověří, vytvoří událost v kalendáři technika a pošle zákazníkovi pozvánku.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="wrap split">
+      <div class="stack">
+        <p class="eyebrow">Pravidla</p>
+        <h2>Nastavení, o kterém rozhodnete spolu s námi</h2>
+        <p class="body">Každá hodnota níže je výchozí. Při spuštění je nastavíme pro vaši firmu: pracovní dobu, dovolené, kdo z techniků co umí a jak daleko jezdí.</p>
+      </div>
+      <div>
+        <div class="rules" style="background:var(--ink-line)">
+          <div class="rule"><span class="rule-value">30 min</span><span class="rule-label">rezerva na přejezd mezi zakázkami</span></div>
+          <div class="rule"><span class="rule-value">+2 h</span><span class="rule-label">nejdřívější termín od poptávky, při naléhavosti 1&nbsp;h</span></div>
+          <div class="rule"><span class="rule-value">21 dní</span><span class="rule-label">dopředu se hledají volné termíny</span></div>
+          <div class="rule"><span class="rule-value">10:00–12:00</span><span class="rule-label">každá návštěva jako rozmezí s maximální délkou</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Když to nestačí</p>
+        <h2>Nejasné a nebezpečné případy jdou na člověka</h2>
+      </div>
+      <div class="features">
+        <div class="feature"><h3>Instalace a pozdní změny</h3><p>Ty jdou k vašemu dispečerovi s důvodem, kontaktem a poslední zprávou.</p></div>
+        <div class="feature feature-warn"><h3>Únik plynu nebo kouř</h3><p>Asistent nic neplánuje. Zákazníkovi řekne, ať volá 112, a okamžitě upozorní dispečera.</p></div>
+        <div class="feature"><h3>Mimo vaši oblast nebo obor</h3><p>Asistent zdvořile odmítne, takže se neobjedná návštěva, kterou vaši technici nemohou vzít.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="text-align:left">
+    <div class="wrap stack" style="max-width:720px">
+      <h2>Podívejte se, jak to běží</h2>
+      <p class="body">Napište nebo nadiktujte požadavek v živém demu. Rezervace se objeví na konci konverzace.</p>
+      <div class="actions"><a class="btn btn-primary" href="live-demo.html">Otevřít živé demo</a><a class="btn btn-outline" href="pilot.html">Domluvit pilot</a></div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Hermidiate AI · Praha</span>
+    <span class="footer-links">
+      <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>
+      <a href="security.html">Bezpečnost</a>
+      <a href="mailto:hermidiateai@gmail.com">hermidiateai@gmail.com</a>
+    </span>
+  </div>
+</footer>
+<script src="../assets/main.js"></script>
+
+<script src="../assets/effects.js"></script>
+</body>
+</html>

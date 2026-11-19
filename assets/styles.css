@@ -297,7 +297,6 @@ p { margin: 0; }
 /* ---------- Additions: navigation, pages, live demo ---------- */
 [hidden] { display: none !important; }
 .nav-link[aria-current="page"] { color: var(--accent); }
-.lang-off { padding: 6px 12px; color: var(--muted); cursor: not-allowed; }
 .page-intro { padding-block: 64px 24px; }
 .page-intro .lead { margin-top: 16px; }
 .page-intro h1 { max-width: 16em; }
@@ -466,7 +465,7 @@ p { margin: 0; }
   box-shadow: 0 30px 60px -36px rgba(15, 30, 38, 0.45); overflow: hidden;
 }
 .bk-head {
-  display: flex; align-items: center; gap: 12px; padding: 14px 18px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; padding: 14px 18px;
   border-bottom: 1px solid var(--line); background: var(--surface-soft);
 }
 .bk-avatar {

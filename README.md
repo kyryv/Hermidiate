@@ -12,7 +12,8 @@ use-cases.html               heat pumps, boilers, air conditioning, ventilation
 security.html                data handling, providers, safety
 pilot.html                   pilot steps, pricing explanation, form, FAQ
 privacy.html                 privacy policy (EN) – DRAFT, fill in the yellow parts
-ochrana-osobnich-udaju.html  privacy policy (CZ) – DRAFT, fill in the yellow parts
+cz/                          Czech version: the same pages with the same file names
+cz/ochrana-osobnich-udaju.html  privacy policy (CZ) – DRAFT, fill in the yellow parts
 assets/styles.css            all styles (colours and fonts at the top, in :root)
 assets/main.js               pilot form: sends the form (see "Pilot form")
 assets/demo.js               live demo engine (understanding by keywords + the real decision rules)
@@ -47,6 +48,14 @@ visitor's e-mail app instead of sending.
 3. Opened from disk or localhost → the visitor's e-mail app opens with the details filled in.
 
 On other hosts (GitHub Pages, Vercel) set `FORM_ENDPOINT`, otherwise sending fails with a friendly message.
+
+## Czech version
+
+Every English page has a Czech twin in `cz/` with the same file name; the EN/CZ switch in the
+header links the pair (`privacy.html` ↔ `cz/ochrana-osobnich-udaju.html`). When you change text on
+an English page, change the Czech page too. The live demo speaks Czech on Czech pages
+(`<html lang="cs">`): Czech replies live next to the English ones in `assets/demo.js`
+(`L("English", "Czech")`) and Czech names in the `cs` block of `assets/demo-company.js`.
 
 ## Live demo
 
@@ -86,6 +95,5 @@ To go back: unzip the backup into this folder and replace the files
 ## Before going live
 
 - Fill in the yellow `[...]` parts in both privacy pages (controller, IČO, address, date, hosting).
-- The Czech version is not included yet. The CZ button in the header is a placeholder.
 - Replace the example calendar details, phone number and technician name on the home page with real or clearly fictional ones.
 - Optional: host the fonts yourself instead of Google Fonts, then remove the Google Fonts line from the pages and privacy policies.

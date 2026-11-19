@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Živé demo – Hermidiate</title>
+  <meta name="description" content="Vyzkoušejte Hermidiate na smyšlené topenářské firmě: popište problém v chatu a sledujte, jak systém ověří údaje, vybere technika a najde volný čas.">
+  <meta name="theme-color" content="#EEF2F3">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Přeskočit na obsah</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Hermidiate – úvod">
+      <img src="../assets/favicon.svg" width="34" height="34" alt="">
+      <span class="logo-word">Hermidiate</span>
+    </a>
+    <nav class="nav" aria-label="Hlavní menu">
+      <a class="nav-link" href="how-it-works.html">Jak to funguje</a>
+      <a class="nav-link" href="live-demo.html" aria-current="page">Živé demo</a>
+      <a class="nav-link" href="use-cases.html">Využití</a>
+      <a class="nav-link" href="security.html">Bezpečnost</a>
+      <a class="nav-link" href="pilot.html">Pilot</a>
+      <span class="lang"><a href="../live-demo.html" hreflang="en" lang="en">EN</a><span aria-current="true">CZ</span></span>
+      <a class="btn btn-primary btn-sm" href="pilot.html">Domluvit pilot</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="wrap demo-intro">
+    <p class="eyebrow">Živé demo</p>
+    <h1>Vyzkoušejte si to na smyšlené firmě</h1>
+  </section>
+
+  <section class="wrap demo-wrap">
+    <div class="demo">
+      <div class="demo-chat">
+        <div class="chat-head">
+          <span>Novák Servis · online objednávky</span>
+          <button class="demo-restart" type="button" data-restart>Začít znovu</button>
+        </div>
+        <div class="demo-thread" id="thread" role="log" aria-live="polite" aria-label="Konverzace"></div>
+        <div class="demo-chips" id="chips" aria-label="Navrhované odpovědi"></div>
+        <div class="demo-bar">
+          <div class="demo-row demo-end" id="end" hidden>
+            <a class="btn btn-primary" href="pilot.html">Domluvit pilot pro vaši firmu</a>
+            <button class="btn btn-outline btn-sm" type="button" data-restart>Začít znovu</button>
+          </div>
+          <div class="demo-row" id="bar-chat">
+            <input class="demo-input" id="input" type="text" placeholder="Napište požadavek, např. tepelné čerpadlo hlásí E21" aria-label="Zpráva" autocomplete="off">
+            <button class="btn btn-primary btn-sm" id="send" type="button">Odeslat</button>
+          </div>
+          <p class="demo-hint">Použijte smyšlené údaje. Nic neopustí váš prohlížeč.</p>
+        </div>
+      </div>
+
+      <aside class="demo-side" aria-label="Co vidí systém">
+        <div class="demo-panel">
+          <p class="demo-panel-title">Co vidí systém</p>
+          <dl class="sys-fields" id="sys-fields"></dl>
+        </div>
+        <div class="demo-panel">
+          <p class="demo-panel-title">Rozhodnutí krok za krokem</p>
+          <ol class="sys-log" id="sys-log"></ol>
+        </div>
+        <details class="demo-panel sys-company">
+          <summary class="demo-panel-title">Smyšlená firma</summary>
+          <div class="sys-table">
+            <table>
+              <thead><tr><th>Technik</th><th>Dovednosti</th><th>Oblast</th><th>Pracovní doba</th></tr></thead>
+              <tbody id="sys-techs"></tbody>
+            </table>
+          </div>
+          <p class="small">Jejich kalendáře už obsahují jiné návštěvy. Každý nabídnutý volný čas se v nich hledá živě, podle skutečných pravidel: 30 min na přejezd kolem každé návštěvy, nejdřívější začátek za 2 h (při naléhavosti za 1 h), až 21 dní dopředu.</p>
+        </details>
+      </aside>
+    </div>
+    <p class="small" style="margin-top:20px">Porozumění textu je tu simulované klíčovými slovy; skutečný produkt na to používá AI. Kontroly, výběr technika, hledání volného času i rezervace běží podle stejných pravidel jako skutečný agent, jen na smyšlené firmě. Nic se neodesílá na server a nevzniká žádná skutečná rezervace.</p>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Hermidiate AI · Praha</span>
+    <span class="footer-links">
+      <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>
+      <a href="security.html">Bezpečnost</a>
+      <a href="mailto:hermidiateai@gmail.com">hermidiateai@gmail.com</a>
+    </span>
+  </div>
+</footer>
+<script src="../assets/main.js"></script>
+<script src="../assets/demo-company.js"></script>
+<script src="../assets/demo.js"></script>
+<script src="../assets/effects.js"></script>
+</body>
+</html>
