@@ -1,0 +1,7 @@
+.DS_Store
+Thumbs.db
+node_modules/
+_backup-*.zip
+
+# old nested copy of the site (kept locally only)
+/hermidiate-website/

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Live demo – Hermidiate</title>
+  <meta name="description" content="Try Hermidiate on a fictional heating company: describe a problem in the chat and watch the system check the details, pick a technician and find free time.">
+  <meta name="theme-color" content="#EEF2F3">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Hermidiate – home">
+      <img src="assets/favicon.svg" width="34" height="34" alt="">
+      <span class="logo-word">Hermidiate</span>
+    </a>
+    <nav class="nav" aria-label="Main menu">
+      <a class="nav-link" href="how-it-works.html">How it works</a>
+      <a class="nav-link" href="live-demo.html" aria-current="page">Live demo</a>
+      <a class="nav-link" href="use-cases.html">Use cases</a>
+      <a class="nav-link" href="security.html">Security</a>
+      <a class="nav-link" href="pilot.html">Pilot</a>
+      <span class="lang"><span aria-current="true">EN</span><span class="lang-off" title="Czech version coming soon">CZ</span></span>
+      <a class="btn btn-primary btn-sm" href="pilot.html">Book a pilot</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="wrap demo-intro">
+    <p class="eyebrow">Live demo</p>
+    <h1>Try it on a fictional company</h1>
+  </section>
+
+  <section class="wrap demo-wrap">
+    <div class="demo">
+      <div class="demo-chat">
+        <div class="chat-head">
+          <span>Novák Service · online booking</span>
+          <button class="demo-restart" type="button" data-restart>Start over</button>
+        </div>
+        <div class="demo-thread" id="thread" role="log" aria-live="polite" aria-label="Conversation"></div>
+        <div class="demo-chips" id="chips" aria-label="Suggested replies"></div>
+        <div class="demo-bar">
+          <div class="demo-row demo-end" id="end" hidden>
+            <a class="btn btn-primary" href="pilot.html">Book a pilot for your company</a>
+            <button class="btn btn-outline btn-sm" type="button" data-restart>Start over</button>
+          </div>
+          <div class="demo-row" id="bar-chat">
+            <input class="demo-input" id="input" type="text" placeholder="Write your request, e.g. my heat pump shows E21" aria-label="Message" autocomplete="off">
+            <button class="btn btn-primary btn-sm" id="send" type="button">Send</button>
+          </div>
+          <p class="demo-hint">Use made-up details. Nothing leaves your browser.</p>
+        </div>
+      </div>
+
+      <aside class="demo-side" aria-label="What the system sees">
+        <div class="demo-panel">
+          <p class="demo-panel-title">What the system sees</p>
+          <dl class="sys-fields" id="sys-fields"></dl>
+        </div>
+        <div class="demo-panel">
+          <p class="demo-panel-title">Decisions, step by step</p>
+          <ol class="sys-log" id="sys-log"></ol>
+        </div>
+        <details class="demo-panel sys-company">
+          <summary class="demo-panel-title">The fictional company</summary>
+          <div class="sys-table">
+            <table>
+              <thead><tr><th>Technician</th><th>Skills</th><th>Area</th><th>Hours</th></tr></thead>
+              <tbody id="sys-techs"></tbody>
+            </table>
+          </div>
+          <p class="small">Their calendars already hold other visits. Every free time you are offered is found in them, live, with the real rules: 30 min travel around each visit, earliest start 2 h from now (1 h when urgent), up to 21 days ahead.</p>
+        </details>
+      </aside>
+    </div>
+    <p class="small" style="margin-top:20px">Understanding your text is simulated with keywords here; the real product uses AI for it. The checks, technician choice, free-time search and booking run the same rules as the real agent, on a fictional company. Nothing is sent to a server and no real booking is made.</p>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Hermidiate AI · Prague</span>
+    <span class="footer-links">
+      <a href="privacy.html">Privacy policy</a>
+      <a href="security.html">Security</a>
+      <a href="mailto:hermidiateai@gmail.com">hermidiateai@gmail.com</a>
+    </span>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="assets/demo-company.js"></script>
+<script src="assets/demo.js"></script>
+<script src="assets/effects.js"></script>
+</body>
+</html>

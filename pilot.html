@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pilot – Hermidiate</title>
+  <meta name="description" content="Join the Hermidiate pilot for service companies in Prague and Central Bohemia. Request a call and set up the assistant for your company.">
+  <meta name="theme-color" content="#EEF2F3">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Hermidiate – home">
+      <img src="assets/favicon.svg" width="34" height="34" alt="">
+      <span class="logo-word">Hermidiate</span>
+    </a>
+    <nav class="nav" aria-label="Main menu">
+      <a class="nav-link" href="how-it-works.html">How it works</a>
+      <a class="nav-link" href="live-demo.html">Live demo</a>
+      <a class="nav-link" href="use-cases.html">Use cases</a>
+      <a class="nav-link" href="security.html">Security</a>
+      <a class="nav-link" href="pilot.html" aria-current="page">Pilot</a>
+      <span class="lang"><span aria-current="true">EN</span><span class="lang-off" title="Czech version coming soon">CZ</span></span>
+      <a class="btn btn-primary btn-sm" href="pilot.html">Book a pilot</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="wrap pilot-top" id="contact">
+    <div class="pilot-info">
+      <p class="eyebrow eyebrow-accent">Pilot</p>
+      <h1>We're looking for our first service company in the Prague area</h1>
+      <p class="lead">We set Hermidiate up for your company and tune it with your dispatch team.</p>
+      <ol class="pilot-steps">
+        <li><span><b>Short call.</b> We go through your services, technicians and the area you cover.</span></li>
+        <li><span><b>Set-up.</b> Technician skills, job durations, working hours and booking rules.</span></li>
+        <li><span><b>Launch.</b> The chat goes on your website; we tune it with your dispatch team in the first weeks.</span></li>
+      </ol>
+      <div class="pilot-price">
+        <p class="eyebrow">How pricing works</p>
+        <p class="body">The price depends on how many calls you get, how many technicians and calendars are involved, and which integrations you need. We give the exact numbers on the first call.</p>
+      </div>
+      <p class="small">Or write to us directly: <a class="email" href="mailto:hermidiateai@gmail.com">hermidiateai@gmail.com</a></p>
+    </div>
+    <div class="pilot-form">
+      <h2>Request a pilot call</h2>
+      <form class="form form-compact" id="pilot-form" name="pilot" method="POST" novalidate
+            data-netlify="true" netlify-honeypot="website"
+            data-msg-ok="Thank you! We'll get back to you within two working days."
+            data-msg-mailto="We opened an e-mail with your details. Just send it."
+            data-mail-subject="Hermidiate pilot – interest"
+            data-lbl-company="Company" data-lbl-name="Name" data-lbl-phone="Phone" data-lbl-techs="Technicians"
+            data-msg-err="Sending failed. Please write to us at hermidiateai@gmail.com."
+            data-msg-invalid="Please fill in company name, your name and a valid e-mail.">
+        <div class="field"><label for="firm">Company name</label><input id="firm" name="company" type="text" autocomplete="organization" required></div>
+        <div class="field-row">
+          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="techs">Number of technicians</label>
+          <select id="techs" name="technicians"><option>10-25</option><option>26-49</option><option>50-100</option><option>more than 100</option></select>
+        </div>
+        <input type="hidden" name="form-name" value="pilot">
+        <input type="hidden" name="language" value="en">
+        <input type="hidden" name="page" value="">
+        <input type="hidden" name="sent_at" value="">
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-primary" type="submit">Send pilot request</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+        <p class="form-note">We use these details only to get back to you. See our <a href="privacy.html">privacy policy</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap stack" style="max-width:820px">
+      <p class="eyebrow">Questions</p>
+      <h2>Before you book</h2>
+      <div class="faq">
+        <details><summary>Does it work with our calendar?</summary><p>Google Calendar is supported today, and each technician gets the job in their own calendar. Using another calendar or dispatch system? Write to us and we'll find a way.</p></details>
+        <details><summary>Which languages does it speak?</summary><p>Czech, English and Ukrainian. Customers can mix languages in one conversation.</p></details>
+        <details><summary>What happens when the AI is not sure?</summary><p>Unclear cases, installations and late changes go to a person, with the reason, the contact and the last message attached. Gas leaks and smoke are never scheduled.</p></details>
+        <details><summary>How long is the pilot?</summary><p>We agree the length on the first call, based on your services and the number of technicians.</p></details>
+        <details><summary>Where is our data stored?</summary><p>Read the details on the <a href="security.html">security page</a> and in the <a href="privacy.html">privacy policy</a>.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Hermidiate AI · Prague</span>
+    <span class="footer-links">
+      <a href="privacy.html">Privacy policy</a>
+      <a href="security.html">Security</a>
+      <a href="mailto:hermidiateai@gmail.com">hermidiateai@gmail.com</a>
+    </span>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="assets/effects.js"></script>
+</body>
+</html>

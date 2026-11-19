@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Security & privacy – Hermidiate</title>
+  <meta name="description" content="Where Hermidiate stores data, who processes it, how long it is kept and how the chat handles unsafe requests.">
+  <meta name="theme-color" content="#EEF2F3">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Hermidiate – home">
+      <img src="assets/favicon.svg" width="34" height="34" alt="">
+      <span class="logo-word">Hermidiate</span>
+    </a>
+    <nav class="nav" aria-label="Main menu">
+      <a class="nav-link" href="how-it-works.html">How it works</a>
+      <a class="nav-link" href="live-demo.html">Live demo</a>
+      <a class="nav-link" href="use-cases.html">Use cases</a>
+      <a class="nav-link" href="security.html" aria-current="page">Security</a>
+      <a class="nav-link" href="pilot.html">Pilot</a>
+      <span class="lang"><span aria-current="true">EN</span><span class="lang-off" title="Czech version coming soon">CZ</span></span>
+      <a class="btn btn-primary btn-sm" href="pilot.html">Book a pilot</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="wrap page-intro">
+    <p class="eyebrow">Security &amp; privacy</p>
+    <h1>AI reads the text. Fixed rules handle the schedule.</h1>
+    <p class="lead">For a product that handles customer contacts and calendars, these are the questions to answer first. The full legal wording is in the privacy policy.</p>
+  </section>
+
+  <section class="section" style="padding-top:24px">
+    <div class="wrap">
+      <div class="section-head"><p class="eyebrow">What we process</p><h2>Only what a booking needs</h2></div>
+      <table class="tbl">
+        <tr><th>Customer data</th><td>name, phone, e-mail, address of the equipment, fault description, chosen time and the conversation itself.</td></tr>
+        <tr><th>Why</th><td>taking the request, choosing a technician, booking the visit and handling changes.</td></tr>
+        <tr><th>How long</th><td>conversations and data are deleted automatically after 12 months at the latest.</td></tr>
+        <tr><th>Who is the controller</th><td>when the chat runs on a service company's website, that company is the controller and Hermidiate processes the data on its behalf.</td></tr>
+        <tr><th>Cookies</th><td>this website uses no cookies and no analytics tools.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="wrap">
+      <div class="section-head"><p class="eyebrow">Who else touches the data</p><h2>Service providers</h2></div>
+      <table class="tbl">
+        <tr><th>Google Calendar</th><td>the technicians' calendars where visits are booked.</td></tr>
+        <tr><th>OpenAI</th><td>processes the text of the message with a language model.</td></tr>
+        <tr><th>n8n</th><td>runs the chat automation.</td></tr>
+        <tr><th>OpenStreetMap / Nominatim</th><td>checks the address.</td></tr>
+        <tr><th>Website hosting</th><td>serves this website.</td></tr>
+      </table>
+      <p class="small" style="margin-top:16px">Some providers may process data outside the EU, mainly in the USA. Transfers rely on the EU–US Data Privacy Framework or standard contractual clauses.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div class="stack">
+        <p class="eyebrow">Safety</p>
+        <h2>Unsafe requests are never scheduled</h2>
+        <p class="body">A gas leak or smoke mentioned in the chat stops the booking flow. The customer is told to call 112 and the dispatcher is alerted at once. Unclear cases go to a person with the full context.</p>
+      </div>
+      <div class="stack">
+        <p class="body">Your rights and how to exercise them are described in the privacy policy. You can also contact the Czech Office for Personal Data Protection.</p>
+        <div class="actions"><a class="btn btn-outline" href="privacy.html">Privacy policy (EN)</a><a class="btn btn-outline" href="ochrana-osobnich-udaju.html">Ochrana osobních údajů (CZ)</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="wrap stack" style="max-width:720px">
+      <h2>Questions before a pilot?</h2>
+      <p class="body">Send them to <a class="email" href="mailto:hermidiateai@gmail.com" style="color:var(--on-dark)">hermidiateai@gmail.com</a> or book a short call and we'll walk through them together.</p>
+      <div class="actions"><a class="btn btn-primary" href="pilot.html">Book a pilot</a></div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Hermidiate AI · Prague</span>
+    <span class="footer-links">
+      <a href="privacy.html">Privacy policy</a>
+      <a href="security.html">Security</a>
+      <a href="mailto:hermidiateai@gmail.com">hermidiateai@gmail.com</a>
+    </span>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="assets/effects.js"></script>
+</body>
+</html>
