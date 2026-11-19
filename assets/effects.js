@@ -3,11 +3,27 @@
 // 2. Hero chat "types" the conversation and starts over (home).
 // 3. Numbers in the dark band count up (home).
 // 4. Booking scene: the day is scanned, the free slot is booked, the job card fills in (home).
+// 5. Live conversations counter: window.setLiveConversations(n) updates the badge (every page).
 // When the visitor asks for reduced motion, everything stays static and fully visible.
 
 (function () {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  // ---------- 5. Live conversations counter ----------
+  // Not connected to anything yet. Later, call window.setLiveConversations(n) with the real number.
+  window.setLiveConversations = function (n) {
+    const count = Math.max(0, Math.floor(Number(n) || 0));
+    document.querySelectorAll(".live-count").forEach((box) => {
+      const d = box.dataset;
+      // Czech: 1 = one, 2–4 = few, 0 and 5+ = many. English: 1 = one, else many.
+      const label = count === 1 ? d.one : count >= 2 && count <= 4 && d.few ? d.few : d.many;
+      box.querySelector(".live-num").textContent = String(count);
+      if (label) box.querySelector(".live-label").textContent = label;
+      box.classList.toggle("is-zero", count === 0);
+    });
+  };
+  window.setLiveConversations(0);
 
   if (reduceMotion || !("IntersectionObserver" in window)) return;
   document.documentElement.classList.add("reveal-on");
