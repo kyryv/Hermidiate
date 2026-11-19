@@ -653,3 +653,37 @@ p { margin: 0; }
 .uc-talk { background: #FDE7D9; color: var(--accent-hover); }
 .features-4 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px 32px; }
 .uc-cta { border-top: 1px solid var(--line); }
+
+/* ---------- Card rows: number/tag, title and text line up across a row in every language ---------- */
+@supports (grid-template-rows: subgrid) {
+  .step, .pain { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 10px; align-content: start; }
+  .steps, .pains { row-gap: 16px; }
+  .features .feature { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 8px; align-content: start; }
+}
+
+/* Mid-size screens: tighter menu so longer Czech labels stay on one row */
+@media (min-width: 721px) and (max-width: 1100px) {
+  .nav { column-gap: 20px; }
+}
+
+/* ---------- Live conversations counter (bottom right, every page) ---------- */
+.live-count {
+  position: fixed; right: max(20px, env(safe-area-inset-right, 0px)); bottom: max(20px, env(safe-area-inset-bottom, 0px)); z-index: 30;
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px 8px 12px; border-radius: 999px;
+  background: var(--ink); color: var(--on-dark); font-size: 13px; line-height: 1.2;
+  box-shadow: 0 12px 28px -12px rgba(15, 30, 38, 0.55); border: 1px solid var(--ink-line);
+}
+.live-num { font-family: var(--font-mono); font-weight: 500; font-variant-numeric: tabular-nums; color: #FFFFFF; }
+.live-label { color: var(--on-dark-muted); }
+.live-dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--ok); flex: none; }
+.live-dot::after {
+  content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid var(--ok); opacity: 0;
+  animation: live-ping 2s ease-out infinite;
+}
+@keyframes live-ping { 0% { transform: scale(0.5); opacity: 0.7; } 100% { transform: scale(1.6); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .live-dot::after { animation: none; } }
+@media (max-width: 600px) {
+  .live-count { right: 12px; bottom: 12px; padding: 7px 12px 7px 10px; font-size: 12px; }
+}
+/* Room under the footer so the fixed counter never covers its links */
+.site-footer { padding-bottom: 64px; }
