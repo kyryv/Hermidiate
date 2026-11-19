@@ -5,3 +5,4 @@ _backup-*.zip
 
 # old nested copy of the site (kept locally only)
 /hermidiate-website/
+.claude/
