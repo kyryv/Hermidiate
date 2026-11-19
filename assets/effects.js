@@ -2,7 +2,7 @@
 // 1. Sections and cards fade in as they scroll into view.
 // 2. Hero chat "types" the conversation and starts over (home).
 // 3. Numbers in the dark band count up (home).
-// 4. Mini calendar: the new booking drops into the free slot (home).
+// 4. Booking scene: the day is scanned, the free slot is booked, the job card fills in (home).
 // When the visitor asks for reduced motion, everything stays static and fully visible.
 
 (function () {
@@ -27,8 +27,8 @@
 
   // ---------- 1. Scroll reveal ----------
   const revealTargets = Array.from(
-    document.querySelectorAll("main .section-head, .step, .pain, .feature, .rule, .event, .faq details")
-  ).filter((el) => !el.closest(".cal-scene")); // the calendar card has its own animation
+    document.querySelectorAll("main .section-head, .step, .pain, .feature, .rule, .faq details")
+  );
 
   revealTargets.forEach((el) => {
     el.classList.add("reveal");
@@ -123,7 +123,36 @@
     requestAnimationFrame(frame);
   }, { threshold: 0.6 });
 
-  // ---------- 4. Mini calendar ----------
-  const calScenes = document.querySelectorAll(".cal-scene");
-  onceVisible(calScenes, (el) => el.classList.add("is-live"), { threshold: 0.4 });
+  // ---------- 4. Booking scene: scan the day → free slot → booked → job card ----------
+  document.querySelectorAll(".bk").forEach((scene) => {
+    const statusText = scene.querySelector(".bk-status-text");
+    const replay = scene.querySelector(".bk-replay");
+    const finalStatus = statusText ? statusText.textContent : "";
+    const setStatus = (text) => { if (statusText && text) statusText.textContent = text; };
+    let run = 0;
+
+    async function play() {
+      const id = ++run;
+      const step = async (ms) => { await wait(ms); if (id !== run) throw 0; };
+      scene.classList.remove("s1", "s2", "s3", "s4", "is-done");
+      scene.classList.add("bk-anim");
+      setStatus(scene.dataset.statusSearch);
+      void scene.offsetWidth; // apply the start state before animating
+      try {
+        await step(250);  scene.classList.add("s1");
+        await step(1350); scene.classList.add("s2"); setStatus(scene.dataset.statusFound);
+        await step(1000); scene.classList.add("s3");
+        await step(800);  scene.classList.add("s4"); setStatus(scene.dataset.statusDone || finalStatus);
+        await step(1400); scene.classList.add("is-done");
+      } catch (e) { /* a newer run took over */ }
+    }
+
+    scene.classList.add("bk-anim"); // hide the result until it is played
+    if (replay) {
+      replay.hidden = false;
+      scene.classList.add("has-replay");
+      replay.addEventListener("click", play);
+    }
+    onceVisible([scene], play, { threshold: 0.45 });
+  });
 })();

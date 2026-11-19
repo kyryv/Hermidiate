@@ -207,37 +207,47 @@
         <p class="body">Before the visit the technician calls the customer, clarifies the scope of work and shortens the reserved time if needed.</p>
         <p class="small">Using another calendar or dispatch system? <a href="pilot.html#contact">Write to us</a> and we'll find a way.</p>
       </div>
-      <div class="cal-scene">
-        <!-- Mini day calendar: the new booking drops into the free 10:00–12:00 slot when scrolled into view -->
-        <div class="cal-day" role="img" aria-label="Technician's day on Thursday 19 November: a new heat pump repair is booked into the free slot from 10:00 to 12:00, between two existing jobs, with 30 minutes of travel time around it">
-          <div class="cal-day-head"><span>Martin D.</span><span>Thu 19 Nov</span></div>
-          <div class="cal-grid" aria-hidden="true">
-            <span class="cal-hour" style="--h:0">08:00</span>
-            <span class="cal-hour" style="--h:2">10:00</span>
-            <span class="cal-hour" style="--h:4">12:00</span>
-            <span class="cal-hour" style="--h:6">14:00</span>
-            <span class="cal-hour" style="--h:8">16:00</span>
-            <span class="cal-ev cal-busy" style="--from:0;--len:1.5">Boiler service · Praha 5</span>
-            <span class="cal-ev cal-travel" style="--from:1.5;--len:0.5">travel</span>
-            <span class="cal-ev cal-new" style="--from:2;--len:2"><b>Heat pump repair</b>J. Nováková · Praha 6</span>
-            <span class="cal-ev cal-travel" style="--from:4;--len:0.5">travel</span>
-            <span class="cal-ev cal-busy" style="--from:5;--len:1.5">AC service · Praha 8</span>
-            <span class="cal-ev cal-busy" style="--from:7;--len:1">Filter change · Praha 7</span>
-          </div>
-          <span class="cal-toast" aria-hidden="true">New booking from chat</span>
+      <!-- Booking scene: the system scans the technician's day, finds the free 10:00–12:00 slot,
+           books it and fills in the job card. assets/effects.js plays it once when it scrolls into view. -->
+      <div class="bk" data-status-search="Looking for free time…" data-status-found="Free slot found · 10:00–12:00" data-status-done="Booked · invitation sent">
+        <div class="bk-head">
+          <span class="bk-avatar" aria-hidden="true">MD</span>
+          <span class="bk-who"><b>Martin D.</b><span>Heat pumps · Praha 5–8</span></span>
+          <span class="bk-status" aria-hidden="true"><i></i><span class="bk-status-text">Booked · invitation sent</span></span>
         </div>
-      <div class="event" role="img" aria-label="Example of a job in the technician's calendar">
-        <span class="event-cal">Calendar · Martin D.</span>
-        <span class="event-title">Repair: heat pump – J. Nováková</span>
-        <span class="event-time">Thu 19 Nov · 10:00–12:00</span>
-        <ul class="event-list">
-          <li><b>Address:</b> Dejvická 77, Praha 6</li>
-          <li><b>Phone:</b> +420 777 123 456</li>
-          <li><b>Fault:</b> Heat pump shows error E21 and doesn't heat.</li>
-          <li><b>Estimate:</b> 60 min, up to 120 min reserved</li>
-        </ul>
-        <span class="event-call">Call the customer before the visit and clarify the scope of work.</span>
-      </div>
+        <div class="bk-body">
+          <div class="bk-day" role="img" aria-label="Technician's day on Thursday 19 November: a new heat pump repair is booked into the free slot from 10:00 to 12:00, between two existing jobs, with 30 minutes of travel time around it">
+            <div class="bk-date" aria-hidden="true"><span>Thu</span><b>19</b><span>Nov</span></div>
+            <div class="bk-grid" aria-hidden="true">
+              <span class="bk-hour" style="--h:0">08</span>
+              <span class="bk-hour" style="--h:2">10</span>
+              <span class="bk-hour" style="--h:4">12</span>
+              <span class="bk-hour" style="--h:6">14</span>
+              <span class="bk-hour" style="--h:8">16</span>
+              <span class="bk-ev bk-busy" style="--from:0;--len:1.5"><b>Boiler service</b>Praha 5</span>
+              <span class="bk-ev bk-travel" style="--from:1.5;--len:0.5">travel</span>
+              <span class="bk-gap" style="--from:2;--len:2"><span>free · 2 h</span></span>
+              <span class="bk-ev bk-new" style="--from:2;--len:2"><b>Heat pump repair</b>J. Nováková · Praha 6</span>
+              <span class="bk-ev bk-travel" style="--from:4;--len:0.5">travel</span>
+              <span class="bk-ev bk-busy" style="--from:5;--len:1.5"><b>AC service</b>Praha 8</span>
+              <span class="bk-ev bk-busy" style="--from:7;--len:1"><b>Filter change</b>Praha 7</span>
+              <span class="bk-scan"></span>
+            </div>
+          </div>
+          <div class="bk-card">
+            <span class="bk-label">Calendar · new visit</span>
+            <span class="bk-title">Repair: heat pump – J.&nbsp;Nováková</span>
+            <span class="bk-time"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Thu 19 Nov · 10:00–12:00</span>
+            <dl class="bk-rows">
+              <div class="bk-row"><dt>Address</dt><dd>Dejvická 77, Praha 6</dd></div>
+              <div class="bk-row"><dt>Phone</dt><dd>+420 777 123 456</dd></div>
+              <div class="bk-row"><dt>Fault</dt><dd>Heat pump shows error E21 and doesn't heat.</dd></div>
+              <div class="bk-row"><dt>Estimate</dt><dd>60 min, up to 120 min reserved</dd></div>
+            </dl>
+            <p class="bk-call">Call the customer before the visit and clarify the scope of work.</p>
+          </div>
+        </div>
+        <button class="bk-replay" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4.5h4.5"/></svg>Replay</button>
       </div>
     </div>
   </section>
